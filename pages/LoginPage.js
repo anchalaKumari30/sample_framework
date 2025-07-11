@@ -1,17 +1,17 @@
-// pages/LoginPage.js
-const { expect } = require('@playwright/test');
+const { expect } = require("@playwright/test");
 
 class LoginPage {
   constructor(page) {
     this.page = page;
-    this.usernameInput = page.locator('#user-name');
-    this.passwordInput = page.locator('#password');
-    this.loginButton = page.locator('#login-button');
+    this.usernameInput = page.locator("#user-name");
+    this.passwordInput = page.locator("#password");
+    this.loginButton = page.locator("#login-button");
     this.errorMessage = page.locator('[data-test="error"]');
   }
 
   async goto() {
-    await this.page.goto('/');
+    await this.page.goto("/");
+    console.log("Navigated to login page");
   }
 
   async login(username, password) {
